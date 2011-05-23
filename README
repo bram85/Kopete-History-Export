@@ -1,0 +1,94 @@
+KopeteHistoryExport README
+
+============
+Introduction
+============
+
+First of all, thank you for using the Kopete Export stylesheets. With these
+stylesheets you can export your Kopete History to a plain text file or export to
+HTML. First off, I'll show you how to convert a history file. Then I'll discuss
+the optional parameters you can pass to xsltproc in order to adjust the output.
+After that, I'll list the ids and classes which are used in the HTML export such
+that you can adjust the styles of the elements in the HTML export.
+
+==========
+How to use
+==========
+
+To export a history XML file to plain text:
+
+  xsltproc -o johnsmith-200706.txt kopetehistory2text.xsl
+$HOME/.kde/share/apps/kopete/logs/MSNProtocol/mycontact@example.org/johnsmith-
+200706.xml
+
+The resulting file is already formatted and shouldn't require any further
+adjustments.
+
+Similary, in order to export a history XML file to HTML:
+
+  xsltproc -o johnsmith-200706.html kopetehistory2html.xsl \
+  $HOME/.kde/share/apps/kopete/logs/MSNProtocol/mycontact@example.org/johnsmith-200706.xml
+
+The resulting HTML is quite basic, but it refers to a CSS Stylesheet with the
+file name 'style.css' in order to tune the output how you'd like it.
+
+It is possible to pass extra parameters to xsltproc in order to adjust the
+output. These parameters are discussed in the sections below. But to pass an
+parameter, run:
+
+  xsltproc -stringparam day 1 -o johnsmith-200706.txt kopetehistory2text.xsl \
+  $HOME/.kde/share/apps/kopete/logs/MSNProtocol/mycontact@example.org/johnsmith-200706.xml
+
+So that is: -stringparam , followed by the parameter name, followed by the
+parameter value.
+
+==========
+Parameters
+==========
+
+The following parameters can be passed to either stylesheet:
+
+* day         [INT] Select which days you want in the output (days of month,
+              separated by a non space character). By default, all days
+              are exported.
+* shortnicks  ('yes'|'no') Show short nicks. The name is truncated from the
+              first space in the nick name. Default is 'no'.
+* shownicks   ('yes'|'no')
+              Show the nick names of the persons. Default is 'yes'.
+              If set to 'no', names like <<< or >>> are being used. This may be
+              confusing with conversation with more than two persons.
+* showtime    ('yes'|'no') Show the time of the day in advance of each message.
+              Default is 'yes'.
+
+================================
+HTML export: CSS IDs and classes
+================================
+
+The following ids are being used:
+
+  title           The title of the page.
+  messagetable    The style which should apply to the complete table: all days
+                  and its messages.
+
+The following classes are being used:
+
+  cell            Applies to all cells in the table.
+  daterow         Applies to the rows which are used to indicate the date.
+  messagerow      Applies to the rows which are used to show messages
+                  (time+nick+message).
+  datecell        The cell inside a daterow indicating the date.
+  timecell        Part of a messagerow: the cell with the time of the day of
+                  the message.
+  nickcell        Part of a messagerow: the cell with the nickname belonging
+                  to a message.
+  messagecell     Part of a messagerow: the cell with the message itself.
+  contactXrow     A row which belongs a contact in the conversation. The X is
+                  replaced by 1,2,...,N in a conversation with N contacts.
+  oddmessagerow   An odd message row.
+  evenmessagerow  An even message row.
+
+===========
+Contribute!
+===========
+
+Contributions are always welcome, send patches or CSS stylesheets to me@bramschoenmakers.nl and I'll see what I can do for the next release.

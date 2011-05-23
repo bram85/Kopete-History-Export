@@ -1,0 +1,74 @@
+
+
+#title {
+    font-size : 20pt;
+  }
+
+
+#messagetable {
+    border-collapse : collapse;
+  }
+
+
+.cell {
+    vertical-align : top;
+    padding-top : 2px;
+    padding-bottom : 2px;
+  }
+
+
+.daterow {
+  }
+
+
+.messagerow {
+  }
+
+
+.datecell {
+    font-size : 16pt;
+    font-weight : bold;
+    padding-top : 25px;
+    text-align : center;
+  }
+
+
+.timecell {
+    border-right-color : #000000;
+    border-right-style : dotted;
+    border-right-width : 1px;
+    margin-right : 10px;
+    text-align : center;
+    padding-right : 20px;
+  }
+
+
+.nickcell {
+    left: 20px;
+    position: relative;
+    width : 25%;
+  }
+
+
+.messagecell {
+    /** This includes the 20 pixels left padding from .nickcell */ left: 50px;
+    position: relative;
+  }
+
+
+.contact1row {
+    background-color : #f1f1f1;
+  }
+
+
+.contact2row {
+  }
+
+
+.oddmessagerow {
+  }
+
+
+.evenmessagerow {
+  }
+
