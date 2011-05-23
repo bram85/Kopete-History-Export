@@ -41,7 +41,7 @@
   <xsl:text>
 
 
-Generated with the kopete2text XSLT sheet by Bram Schoenmakers &lt;bramschoenmakers@kde.nl&gt;</xsl:text>
+Generated with the kopete2text XSLT sheet by Bram Schoenmakers &lt;me@bramschoenmakers.nl&gt;</xsl:text>
 </xsl:template>
 
 <xsl:template name="listcontacts">

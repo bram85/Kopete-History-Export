@@ -58,7 +58,7 @@
   </xsl:for-each>
   </table>
 
-  <p style="font-size : 8pt;">Generated with the kopete2html XSLT sheet by Bram Schoenmakers &lt;<a href="mailto:bramschoenmakers@kde.nl">bramschoenmakers@kde.nl</a>&gt;</p>
+  <p style="font-size : 8pt;">Generated with the kopete2html XSLT sheet by Bram Schoenmakers &lt;<a href="mailto:me@bramschoenmakers.nl">me@bramschoenmakers.nl</a>&gt;</p>
 
   </body>
   </html>
